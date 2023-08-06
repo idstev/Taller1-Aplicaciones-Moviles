@@ -1,0 +1,99 @@
+{
+    "usuario": "nombre_usuario",
+    "productos": [
+      {
+        
+        "nombre": "Sudadera",
+        "descripcion": "Sudadera con capucha y bolsillos",
+        "precio": 28.99,
+        "imagen": "https://img.freepik.com/foto-gratis/sudadera-capucha-gris-aislada_125540-738.jpg?w=2000"
+      },
+      {
+        
+        "nombre": "Falda",
+        "descripcion": "Falda plisada de cuero",
+        "precio": 39.99,
+        "imagen": "https://ddp.com.pa/images/thumbs/0020723_falda-corta-negra_1024.jpeg"
+      },
+      {
+       
+        "nombre": "Chaqueta",
+        "descripcion": "Chaqueta acolchada con cierre",
+        "precio": 55.99,
+        "imagen": "https://marcapl.com/marca/img/articulos/288_CHPA.jpg"
+      },
+      {
+      
+        "nombre": "Blusa",
+        "descripcion": "Blusa con estampado floral",
+        "precio": 24.99,
+        "imagen": "https://www.angoracr.com/wp-content/uploads/2022/03/Blusa-sin-mangas-con-abertura-de-ojo-y-estampado-floral.webp"
+      },
+      {
+       
+        "nombre": "blusa rayada",
+        "descripcion": "Blusa blanca de mujer",
+        "precio": 22.99,
+        "imagen": "https://www.elpalaciodehierro.com/on/demandware.static/-/Library-Sites-palacio-content-global/default/dw6bc65e28/images/PLP/PLP-segmentos/Mujer/Mujer-Ropa/mujer-ropa-sweaters.jpg"
+      },
+      {
+       
+        "nombre": "Blusa color vino",
+        "descripcion": "Blusa de color vino de mujer",
+        "precio": 11.99,
+        "imagen": "https://i.ebayimg.com/thumbs/images/g/DvMAAOSw1J5bhYo-/s-l225.jpg"
+      },
+      {
+       
+        "nombre": "Gorra gris",
+        "descripcion": "Gorra Puma color gris",
+        "precio": 25.99,
+        "imagen": "https://marcapl.com/marca/img/articulos/288_CHPA.jpg"
+      },
+      {
+       
+        "nombre": "Gorra Negra",
+        "descripcion": "Gorra negra Vazari",
+        "precio": 25.99,
+        "imagen": "https://vasari.vteximg.com.br/arquivos/ids/207145-1000-1000/VGC174157-NG.jpg?v=637963676221300000"
+      },
+      {
+       
+        "nombre": "Zapatos negro con blanco",
+        "descripcion": "Zapatos deportivos multius",
+        "precio": 60,
+        "imagen": "https://www.venus.com.ec/pub/media/catalog/product/cache/f246a469ca072380ed3af8f211e66c99/a/t/atlas_zapato_deportivo_para_uso_escolar_colegial_construcci_n_trabajo_negro_blanco2_1.jpg"
+      },
+      {
+       
+        "nombre": "Tenis",
+        "descripcion": "Tenis naranja de mujer",
+        "precio": 80.99,
+        "imagen": "https://koaj.ec/c/332-hover-category_default/deportivos.jpg"
+      },
+      {
+       
+        "nombre": "Jordans",
+        "descripcion": "Jordans edición miles morales",
+        "precio": 90,
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_711318-MEC49357103954_032022-O.webp"
+      },
+      {
+       
+        "nombre": "Calentadores color piel",
+        "descripcion": "Pantalones comodos",
+        "precio": 70,
+        "imagen": "https://images.squarespace-cdn.com/content/v1/579202971b631b5dbc741986/1597775485336-MQEGJNOYCAK0G0HCA503/image-asset.jpeg?format=1500w"
+      },
+      {
+       
+        "nombre": "Jeans",
+        "descripcion": "Jeans azul marino lass",
+        "precio": 25,
+        "imagen": "https://gt.pralin.shop/cdn/shop/products/pantalondelona.jpg?v=1656097825&width=2000"
+      }
+   
+    ]
+
+  }
+  
