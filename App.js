@@ -1,7 +1,7 @@
 
 import { StyleSheet, Text, View } from 'react-native';
 
-import BottomNavigation from '../prueba/Navigators/BottomTab.js';
+import BottomNavigation from '../Taller1-Aplicaciones-Moviles/Navigators/BottomTab';
 
 export default function App() {
   return (

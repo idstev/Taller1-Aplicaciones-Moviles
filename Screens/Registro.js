@@ -1,109 +1,112 @@
+import { StatusBar} from 'expo-status-bar';
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, FlatList, ImageBackground, StatusBar } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Button } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Alert} from 'react-native';
 
-const userData = {
-  name: "John Doe",
-  email: "johndoe@example.com",
-  profileImage: "https://img.freepik.com/vector-premium/icono-circulo-usuario-anonimo-ilustracion-vector-estilo-plano-sombra_520826-1931.jpg",
-  address: "123 Main St, City, Country",
-  phoneNumber: "555-123-4567",
-};
+export default function App({navigation}) {
 
-const sections  = [
-  { id: '1', title: 'Deseados', icon: 'favorite' },
-  { id: '2', title: 'Favoritos', icon: 'favorite-border' },
-  { id: '3', title: 'Historial', icon: 'history' },
-  { id: '4', title: 'Cupones', icon: 'local-offer' },
-];
+  function IniciarSesion(){
+    navigation.navigate('Iniciar');
+}
+function navegar2(){
+ Alert.alert("Registro exitoso");
+}
+  return (
+    <View style={styles.container}>
+  
+      <Text style={styles.ciudad}>Registro</Text>
 
-const UserProfileScreen = () => {
-  const renderSectionItem = ({ item }) => (
-    <View style={styles.sectionItem}>
-      <MaterialIcons name={item.icon} size={24} color="#333" />
-      <Text style={styles.sectionTitle}>{item.title}</Text>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.txtInput}
+          placeholder='Nombre de usuario'
+          placeholderTextColor="white"
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.txtInput}
+          placeholder='Correo electronico'
+          placeholderTextColor="white"
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.txtInput}
+          placeholder='Edad'
+          placeholderTextColor="white"
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.txtInput}
+          placeholder='Contraseña'
+          placeholderTextColor="white"
+          secureTextEntry={true}
+        />
+      </View>
+
+<View style={styles.botones}>
+      <View style={styles.boton}>
+      <Button
+            title='Registrarse'
+            color={'green'}
+            onPress={()=> navegar2()}
+            />
+            
+      </View>
+      <View style={styles.boton}>
+      <Button
+            title='Iniciar Sesion'
+            onPress={()=> IniciarSesion()}
+            
+            />
+      </View>
+      </View>
+
+      <StatusBar style="auto" />
     </View>
   );
-
-  return (
-    <ImageBackground>
-<StatusBar Style="Auto"/>
-    <ScrollView contentContainerStyle={styles.container}>
-      <Image style={styles.profileImage} source={{ uri: userData.profileImage }} />
-      <Text style={styles.name}>{userData.name}</Text>
-      <Text style={styles.email}>{userData.email}</Text>
-
-      <Text style={styles.subTitle}>Información de contacto:</Text>
-      <Text style={styles.info}>Dirección: {userData.address}</Text>
-      <Text style={styles.info}>Teléfono: {userData.phoneNumber}</Text>
-
-
-
-      <Text style={styles.subTitle}>Secciones:</Text>
-      <FlatList
-        data={sections}
-        renderItem={renderSectionItem}
-        keyExtractor={(item) => item.id}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.sectionList}
-      />
-    </ScrollView>
-    
-    </ImageBackground>
-  );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    padding: 20,
-  },
-  profileImage: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
-    marginBottom: 20,
-    alignSelf: 'center',
-  },
-  name: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  email: {
-    fontSize: 18,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  subTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  info: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
+    botones: {
+        flexDirection: 'row',
 
-  sectionList: {
-    marginTop: 10,
-  },
-  sectionItem: {
-    alignItems: 'center',
-    marginRight: 20,
-    
-  },
-  sectionTitle: {
-    fontSize: 16,
-    marginTop: 5,
-  },
-  image: {
-    
+    },
+    boton:{
+        padding:10,
+
+    },
+  container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
     justifyContent: 'center',
   },
+  ciudad: {
+    paddingBottom: 10,
+    fontSize: 40,
+    color: "#3c5493",
+  },
+  txtInput: {
+    height: 50,
+    width: "100%",
+    color: "#acff59",
+    paddingHorizontal: 15,
+    borderRadius: 15,
+    backgroundColor: 'black',
+  },
+  imagenUsuario: {
+    width: 100,
+    height: 100,
+  },
+  inputContainer: {
+    width: '80%',
+    marginBottom: 15,
+  },
 });
-
-export default UserProfileScreen;
