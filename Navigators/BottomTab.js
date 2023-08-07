@@ -9,7 +9,7 @@ import ProductosScreen from '../Screens/ProductosScreen';
 const Tab = createBottomTabNavigator();
 function MyTabs() {
     return (
-        <Tab.Navigator >
+        <Tab.Navigator initialRouteName='Registro'>
             <Tab.Screen name='Home' component={HomeScreen}></Tab.Screen>
             <Tab.Screen name='Registro' component={Registro}></Tab.Screen>
             <Tab.Screen name='Productos' component={ProductosScreen}></Tab.Screen>
