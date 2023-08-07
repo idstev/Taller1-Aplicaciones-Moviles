@@ -1,18 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
 
-import BottomNavigation from '../Taller1/Navigators/BottomTab';
+import React from 'react';
+import MainNavigation from '../Taller1-Aplicaciones-Moviles/Navigators/MainNavigator';
 
 export default function App() {
-  return (
-<BottomNavigation/>
-  );
+  return <MainNavigation />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
