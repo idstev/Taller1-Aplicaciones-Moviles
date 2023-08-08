@@ -14,22 +14,17 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 // Pantalla de pestañas (Bottom Tab Navigator)
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Perfil" component={Perfil} />
-      {/* Agrega más pestañas según sea necesario */}
-    </Tab.Navigator>
-  );
-}
+
 
 // Stack Navigator principal
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="StackScreens" component={StackScreens} />
+      <Stack.Screen name="StackScreens" 
+      options={{headerShown: false}}
+      component={StackScreens} />
       <Stack.Screen name="Carrito" component={CarritoScreen}/>
+      <Stack.Screen name="Iniciar" component={IniciarSesion}/>
     </Stack.Navigator>
   );
 }
@@ -38,8 +33,12 @@ function MyStack() {
 function StackScreens() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Carrito" component={CarritoScreen} />
+       <Tab.Screen name="Registro" component={Registro} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Productos" component={ProductosScreen} />
+      <Tab.Screen name="Perfil" component={Perfil} />
+
+   
     </Tab.Navigator>
   );
 }
