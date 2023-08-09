@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, FlatList, ImageBackground, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, FlatList, ImageBackground, StatusBar} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const userDato = {
@@ -30,10 +30,10 @@ const UserProfileScreen = (prop) => {
 <StatusBar Style="Auto"/>
     <ScrollView contentContainerStyle={styles.container}>
       <Image style={styles.profileImage} source={{ uri: userDato.profileImage }} />
-      <Text style={styles.name}>{prop.datos.userData.username}</Text>
-      <Text style={styles.email}>{prop.datos.userData.email}</Text>
-      <Text style={styles.email}>{prop.datos.userData.edad}</Text>
-      <Text style={styles.email}>{prop.datos.userData.contraseña}</Text>
+      <Text style={styles.name}>{prop.datos.username}</Text>
+      <Text style={styles.email}>{prop.datos.email}</Text>
+      <Text style={styles.email}>{prop.datos.edad}</Text>
+      <Text style={styles.email}>{prop.datos.contraseña}</Text>
 
       <Text style={styles.subTitle}>Información de contacto:</Text>
       <Text style={styles.info}>Dirección: {userDato.address}</Text>

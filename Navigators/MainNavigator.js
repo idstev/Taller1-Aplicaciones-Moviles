@@ -20,6 +20,7 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator initialRouteName="Registro">
+      <Stack.Screen name="Carrito" component={CarritoScreen}/>
       <Stack.Screen name="StackScreens"component={StackScreens} />
       <Stack.Screen name="Registro" component={Registro}/>
       <Stack.Screen name="Iniciar" component={IniciarSesion}/>
@@ -31,7 +32,6 @@ function MyStack() {
 function StackScreens() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Carrito" component={CarritoScreen} />
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Productos" component={ProductosScreen} />
       <Tab.Screen name="Perfil" component={Perfil} />

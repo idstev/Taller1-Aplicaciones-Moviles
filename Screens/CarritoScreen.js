@@ -12,6 +12,7 @@ export default function CarritoScreen() {
 
   useEffect(() => {
     cargarCarrito();
+    console.log(carrito);
   }, []);
 const cargarCarrito = async () => {
     try {
@@ -20,8 +21,10 @@ const cargarCarrito = async () => {
         setCarrito(JSON.parse(carritoData));
       }
     } catch (error) {
+    
     console.log(error);
   }
+  
 };
   const guardarCarrito = async (nuevoCarrito) => {
     try {
@@ -33,7 +36,7 @@ const cargarCarrito = async () => {
   const eliminarProducto = async (index) => {
     const nuevoCarrito = carrito.filter((_, i) => i !== index);
     setCarrito(nuevoCarrito);
-    guardarCarrito(nuevoCarrito);
+    guardarCarrito(carrito);
   };
   const renderFila = ({ item, index }) => (
     <View style={styles.fila}>
@@ -41,7 +44,7 @@ const cargarCarrito = async () => {
       <Image style={styles.foto} source={{ uri: item.imagen }} />
       <Text style={styles.celda}>{item.precio}</Text>
       <TouchableOpacity style={styles.Icono}>
-        <TouchableOpacity onPress={() => eliminarProducto(index)}>
+        <TouchableOpacity onPress={async () => await eliminarProducto(index)}>
           <View style={styles.Icono}>
             <Ionicons name="trash" size={24} color="black" />
           </View>
