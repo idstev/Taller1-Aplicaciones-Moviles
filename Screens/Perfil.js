@@ -6,7 +6,20 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function RegistroScreen() {
 
   const [registro, setRegistro] = useState(null);
-
+  const sections  = [
+    { id: '1', title: 'Deseados', icon: 'favorite' },
+    { id: '2', title: 'Favoritos', icon: 'favorite-border' },
+    { id: '3', title: 'Historial', icon: 'history' },
+    { id: '4', title: 'Cupones', icon: 'local-offer' },
+  ];
+  
+  const UserProfileScreen = () => {
+    const renderSectionItem = ({ item }) => (
+      <View style={styles.sectionItem}>
+        <MaterialIcons name={item.icon} size={24} color="#333" />
+        <Text style={styles.sectionTitle}>{item.title}</Text>
+      </View>
+    );
 console.log(registro)
 
   useEffect(() => {
@@ -44,32 +57,53 @@ console.log(registro)
  
 
   return (
+<ImageBackground>
+<View>
 
-    <View>
+<Text>Datos de Registro:</Text>
 
-      <Text>Datos de Registro:</Text>
+  {registro && (
 
-      {registro && (
+  <View>
 
-        <View>
+  </View>
 
-          <Text>Nombre: {registro.username}</Text>
+)}
 
-          <Text>Email: {registro.email}</Text>
+</View>
+<StatusBar Style="Auto"/>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Image style={styles.profileImage} source={{ uri: userDato.profileImage }} />
+      <Text style={styles.name}>{registro.username}</Text>
+      <Text style={styles.email}>{registro.email}</Text>
+      <Text style={styles.email}>{registro.edad}</Text>
+      
 
-          {/* Agrega aquí más campos según la estructura de tus datos */}
+      <Text style={styles.subTitle}>Información de contacto:</Text>
+      <Text style={styles.info}>Dirección: {userDato.address}</Text>
+      <Text style={styles.info}>Teléfono: {userDato.phoneNumber}</Text>
 
-        </View>
 
-      )}
 
-    </View>
+      <Text style={styles.subTitle}>Secciones:</Text>
+      <FlatList
+        data={sections}
+        renderItem={renderSectionItem}
+        keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.sectionList}
+      />
+    </ScrollView>
+    
+    </ImageBackground>
+   
 
    
 
   );
 
-}
+}}
 
  
 
