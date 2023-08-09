@@ -21,7 +21,7 @@ function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="StackScreens" 
-      options={{headerShown: false}}
+
       component={StackScreens} />
       <Stack.Screen name="Carrito" component={CarritoScreen}/>
       <Stack.Screen name="Iniciar" component={IniciarSesion}/>
