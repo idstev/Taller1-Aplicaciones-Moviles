@@ -7,7 +7,7 @@ import ropaJSON from '../Screens/products.json';
 export default function ProductosScreen({ navigation }) {
   const [productos, setProductos] = useState([]);
   const [carrito, setCarrito] = useState([]);
-  const MAX_CARRITO = 5;
+  const MAX_CARRITO = 200;
 
   useEffect(() => {
     setProductos(ropaJSON.products);
@@ -30,10 +30,12 @@ export default function ProductosScreen({ navigation }) {
       const nuevoCarrito = [...carrito, producto];
       setCarrito(nuevoCarrito);
       guardarCarrito(nuevoCarrito);
+      navigation.navigate('Carrito', { carrito: carrito });
     } else {
       alert('No se pueden agregar más productos al carrito.');
     }
   };
+
 
   const guardarCarrito = async (nuevoCarrito) => {
     try {
@@ -56,9 +58,6 @@ export default function ProductosScreen({ navigation }) {
           'https://png.pngtree.com/thumb_back/fh260/background/20220916/pngtree-clouds-with-nice-natural-blue-sky-background-image_1463405.jpg',
       }}
     >
-      <TouchableOpacity onPress={() => navigation.navigate('Carrito')}>
-        <Text>Carrito</Text>
-      </TouchableOpacity>
       <SectionList
         sections={secciones}
         renderItem={({ item }) => (
