@@ -5,7 +5,7 @@ import { StyleSheet, Text, TextInput, View, Button} from 'react-native';
 export default function IniciarSesion({navigation}) {
 
     function Iniciar(){
-        navigation.navigate('')
+        navigation.navigate('home')
     }
     
   return (

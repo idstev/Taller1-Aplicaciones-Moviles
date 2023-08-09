@@ -25,6 +25,7 @@ function MyStack() {
       component={StackScreens} />
       <Stack.Screen name="Carrito" component={CarritoScreen}/>
       <Stack.Screen name="Iniciar" component={IniciarSesion}/>
+      <Stack.Screen name="home" component={HomeScreen}/>
     </Stack.Navigator>
   );
 }
