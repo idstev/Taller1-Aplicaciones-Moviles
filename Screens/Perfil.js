@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, FlatList, ImageBackground, StatusBar } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const userData = {
+const userDato = {
   name: "John Doe",
   email: "johndoe@example.com",
   profileImage: "https://img.freepik.com/vector-premium/icono-circulo-usuario-anonimo-ilustracion-vector-estilo-plano-sombra_520826-1931.jpg",
@@ -17,7 +17,7 @@ const sections  = [
   { id: '4', title: 'Cupones', icon: 'local-offer' },
 ];
 
-const UserProfileScreen = () => {
+const UserProfileScreen = (prop) => {
   const renderSectionItem = ({ item }) => (
     <View style={styles.sectionItem}>
       <MaterialIcons name={item.icon} size={24} color="#333" />
@@ -29,13 +29,15 @@ const UserProfileScreen = () => {
     <ImageBackground>
 <StatusBar Style="Auto"/>
     <ScrollView contentContainerStyle={styles.container}>
-      <Image style={styles.profileImage} source={{ uri: userData.profileImage }} />
-      <Text style={styles.name}>{userData.name}</Text>
-      <Text style={styles.email}>{userData.email}</Text>
+      <Image style={styles.profileImage} source={{ uri: userDato.profileImage }} />
+      <Text style={styles.name}>{prop.datos.userData.username}</Text>
+      <Text style={styles.email}>{prop.datos.userData.email}</Text>
+      <Text style={styles.email}>{prop.datos.userData.edad}</Text>
+      <Text style={styles.email}>{prop.datos.userData.contraseña}</Text>
 
       <Text style={styles.subTitle}>Información de contacto:</Text>
-      <Text style={styles.info}>Dirección: {userData.address}</Text>
-      <Text style={styles.info}>Teléfono: {userData.phoneNumber}</Text>
+      <Text style={styles.info}>Dirección: {userDato.address}</Text>
+      <Text style={styles.info}>Teléfono: {userDato.phoneNumber}</Text>
 
 
 

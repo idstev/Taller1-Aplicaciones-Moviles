@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Button } from 'react-native';
 import { StyleSheet, Text, TextInput, View, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import UserProfileScreen from './Perfil';
 export default function App({ navigation }) {
   const [userData, setUserData] = useState({
     username: '',
@@ -114,6 +114,14 @@ export default function App({ navigation }) {
       </View>
 
       <StatusBar style='auto' />
+      <FlatList
+             data={userData}
+             renderItem={({item}) =>(
+              <UserProfileScreen
+              datos={item}
+              /> 
+  )}
+             />
     </View>
   );
 }
