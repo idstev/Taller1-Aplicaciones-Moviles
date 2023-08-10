@@ -10,6 +10,11 @@ import Perfil from '../Screens/Perfil'
 import ProductosScreen from '../Screens/ProductosScreen';
 import Registro from '../Screens/Registro';
 
+//Icons
+import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -32,9 +37,33 @@ function MyStack() {
 function StackScreens() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Productos" component={ProductosScreen} />
-      <Tab.Screen name="Perfil" component={Perfil} />
+      <Tab.Screen name="Home" component={HomeScreen}
+      options={{
+        tabBarLabel:'Inicio',
+        tabBarIcon: () => (
+          <FontAwesome name="home" size={24} color="black" />
+        ),
+        headerTitle:'Inicio'
+    }} /> 
+      
+      
+      <Tab.Screen name="Productos" component={ProductosScreen}
+      options={{
+        tabBarLabel:'Productos',
+        tabBarIcon: () => (
+          <FontAwesome5 name="tshirt" size={24} color="black" />
+        ),
+        headerTitle:'Productos'
+    }} /> 
+      <Tab.Screen name="Perfil" component={Perfil}
+      options={{
+        tabBarLabel:'Perfil',
+        tabBarIcon: () => (
+          <Ionicons name="person-circle-sharp" size={24} color="black" />
+        ),
+        headerTitle:'Perfil'
+    }} />
+      
 
    
     </Tab.Navigator>
