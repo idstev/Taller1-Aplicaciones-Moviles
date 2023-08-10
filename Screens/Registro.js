@@ -18,7 +18,6 @@ export default function App({ navigation }) {
       if (registroJSON !== null) {
         const registro = JSON.parse(registroJSON);
         console.log('Datos de registro recuperados de AsyncStorage:', registro);
-        // Hacer algo con los datos recuperados...
       }
     } catch (error) {
       console.error('Error al recuperar los datos del registro desde AsyncStorage:', error);
@@ -41,10 +40,10 @@ export default function App({ navigation }) {
       // Guardar los datos en AsyncStorage
       await AsyncStorage.setItem('registro', JSON.stringify(registro));
       console.log('Datos de registro guardados en AsyncStorage');
-      
+
       // Mostrar un mensaje de registro exitoso
       Alert.alert('Registro exitoso');
-      
+
       // Restablecer los campos de texto a su estado inicial
       setUserData({
         username: '',
@@ -115,13 +114,13 @@ export default function App({ navigation }) {
 
       <StatusBar style='auto' />
       <FlatList
-             data={userData}
-             renderItem={({item}) =>(
-              <UserProfileScreen
-              datos={item}
-              /> 
-  )}
-             />
+        data={userData}
+        renderItem={({ item }) => (
+          <UserProfileScreen
+            datos={item}
+          />
+        )}
+      />
     </View>
   );
 }
